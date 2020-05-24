@@ -1,0 +1,249 @@
+@import "./common.scss";
+
+// glideJS
+// core
+@import "./glide/glide.core.scss";
+// theme
+@import "./glide/glide.theme.scss";
+
+.hero {
+  height: 700px;
+  width: 100%;
+  background: #555;
+  color: #aaa;
+  font-size: 4rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans";
+  letter-spacing: 10px;
+}
+
+.b-rubrics {
+  @extend %section;
+}
+.b-rubrics__text {
+  width: 50%;
+  min-width: 300px;
+  font-weight: 300;
+}
+.b-rubrics__heading {
+  @extend %heading;
+  margin-bottom: 1.5rem;
+}
+.b-rubrics__desc {
+  font-family: "Open Sans";
+  font-size: 1.1rem;
+  margin-bottom: 4rem;
+}
+
+.b-articles {
+  @extend %section;
+  height: auto;
+}
+.b-articles__heading {
+  @extend %heading;
+  margin-bottom: 3rem;
+}
+.articles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article {
+  width: 23%;
+  height: 400px; // 400
+  background: #444;
+  color: white;
+  border-radius: 10px;
+  font-family: "Open Sans";
+  box-shadow: 2px 3px 0.2rem 0.1rem rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &:first-of-type {
+    background: #355f55;
+  }
+  &:nth-of-type(2) {
+
+  }
+  &:nth-of-type(3) {
+    background: #20284c;
+  }
+  &:last-of-type {
+    background: #ba4019;
+  }
+  i {
+    display: block;
+    margin-bottom: 0.7rem;
+    font-size: .6rem;
+    font-style: italic;
+    color: #bbb;
+  }
+}
+.article__text {
+  padding: 10%;
+  height: 370px; // 280
+  overflow-y: scroll;
+  @include scrollbars(3px, #666, #888);
+}
+.article__heading {
+  font-size: 1.3rem;
+  margin-bottom: .7rem;
+}
+.article__desc {
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: #eee;
+  // background: linear-gradient(white, transparent);
+}
+.article__img {
+  // display: block;
+  width: 100%;
+  height: 150px;
+  background: #444;
+  border-radius: 0 0 10px 10px;
+}
+
+.media {
+  display: flex;
+  background: #333;
+  color: #eee;
+  font-family: "Open Sans";
+  border-radius: 140px 60px;
+  padding: 10% 13%;
+  font-weight: 300;
+  // height: 800px;
+  align-items: center;
+  justify-content: space-between;
+}
+.media__text {
+  // flex: 1;
+  height: 450px;
+}
+.media__heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.media__desc {
+  margin-bottom: 1rem;
+}
+.medium {
+  display: flex;
+  margin: 0.5rem 0;
+  img {
+    height: 30px;
+    width: 30px;
+    margin-right: 0.5rem;
+    filter: invert(1);
+  }
+}
+
+.media__imgs {
+  // flex: 1;
+}
+.media__img {
+  border-radius: 20px;
+  height: 450px;
+  width: 225px;
+  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  box-shadow: 2rem 2rem 2rem 1rem #222;
+}
+
+.b-map {
+  display: flex;
+  height: 500px;
+}
+.b-map__text-block {
+  flex: 1;
+  background: #ccc;
+  padding: 5% 3%;
+}
+.b-map__text {
+  width: 70%;
+  margin: 0 auto;
+}
+
+// DOESN'T WORK
+.b-map__heading {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+.b-map__desc {
+  font-family: "Open Sans";
+  font-size: 0.9rem;
+}
+.map {
+  flex: 2;
+}
+.b-map__heading {
+  @extend %heading;
+  font-size: 2rem;
+}
+
+$height: 700px;
+.glide {
+  height: $height;
+}
+.glide__slide {
+  background: white;
+  height: $height;
+  position: relative;
+  object-position: 50% 80%;
+  &--1 {
+    .glide__caption {
+      right: 10%;
+      bottom: 15%;
+    }
+  }
+  &--2 {
+    .glide__caption {
+      left: 50%;
+      transform: translate(-50%);
+      bottom: 15%;
+    }
+    img {
+      filter: contrast(1.1);
+    }
+  }
+  &--3 {
+    .glide__caption {
+      left: 5%;
+      bottom: 15%;
+    }
+  }
+}
+.glide__slide img {
+  opacity: 1;
+  height: $height;
+  width: 100%;
+  object-fit: cover;
+  &:first-of-type {
+    object-position: 50% 80%;
+  }
+}
+.glide__caption {
+  display: block;
+  padding: 10px 15px;
+  background: white;
+  position: absolute;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  &--1 {
+    right: 10%;
+    bottom: 15%;
+  }
+  &--2 {
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 15%;
+  }
+  &--3 {
+    left: 5%;
+    bottom: 15%;
+  }
+}

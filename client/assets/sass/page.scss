@@ -1,0 +1,23 @@
+@import "./common.scss";
+
+.heading {
+  @extend %heading;
+  margin-bottom: 2rem;
+}
+
+.description {
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+@mixin cut-corners ($left-top, $right-top: 0px, $right-bottom: 0px, $left-bottom: 0px) {
+  clip-path: polygon($left-top 0%, calc(100% - #{$right-top}) 0%, 100% $right-top, 100% calc(100% - #{$right-bottom}), calc(100% - #{$right-bottom}) 100%, $left-bottom 100%, 0% calc(100% - #{$left-bottom}), 0% $left-top);
+}
+
+.image {
+  width: 100%;
+  margin-bottom: 4rem;
+  --corner: 10px;
+  // clip-path: polygon(var(--corner) 0%, calc(100% - var(--corner)) 0%, 100% var(--corner), 100% calc(100% - var(--corner)), calc(100% - var(--corner)) 100%, var(--corner) 100%, 0% calc(100% - var(--corner)), 0% var(--corner));
+  @include cut-corners(0px, 0px, 25px)
+}

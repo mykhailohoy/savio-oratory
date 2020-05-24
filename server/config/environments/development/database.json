@@ -1,0 +1,17 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "bookshelf",
+      "settings": {
+        "client": "postgres",
+        "database": "saviooratorydb",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "username": "postgres",
+        "password": "Nflingren2019."
+      },
+      "options": {}
+    }
+  }
+}
