@@ -27,7 +27,7 @@ const BACKEND_URL = "http://localhost:1337";
 let glide = new Glide(".glide", {
   type: "carousel",
   // autoplay: 6000,
-  // gap: 100,
+  gap: 100,
 })
 
 glide.on("run.after", () => {
@@ -77,7 +77,10 @@ async function renderArticles(parent, className) {
         break;
       }
 
-      let element = `<div class="${className}" data-id="${data[i].id}"><div class="${className}__text"><h4 class="${className}__heading">${data[i].title}</h4><i>05.03.1984</i><p class="${className}__desc">${data[i].description}</p></div><!--<img src="${BACKEND_URL}${data[i].image.formats.small.url}" class="${className}__img">--></div>`;
+      let date = new Date(data[i].updated_at);
+      date = `${date.getHours() + 1}:${date.getMinutes() + 1}, ${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
+
+      let element = `<div class="${className}" data-id="${data[i].id}"><div class="${className}__text"><h4 class="${className}__heading">${data[i].title}</h4><p class="${className}__date">${date}</p><p class="${className}__desc">${data[i].description}</p></div></div>`;
 
       element = htmlToElement(element);
       parent.appendChild(element)
