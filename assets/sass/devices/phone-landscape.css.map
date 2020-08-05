@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "phone-landscape.scss"
+    ],
+    "names": [],
+    "file": "phone-landscape.css"
+}
